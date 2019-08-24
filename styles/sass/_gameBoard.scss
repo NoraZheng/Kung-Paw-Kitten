@@ -1,0 +1,9 @@
+.gameBoard {
+	padding: 10%;
+	display: flex;
+	list-style: none;
+	flex-wrap: wrap;
+}
+.hole {
+	flex: 1 1 33%;
+}
