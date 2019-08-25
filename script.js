@@ -8,11 +8,11 @@ let counter = 0;
 game.showFinger = (obj, time) => {
 	console.log(obj);
 	obj.addClass('up');
-	console.log(`finger${obj[0]} shows for ${time} seconds`);
+	console.log(`finger${obj} shows for ${time} ms`);
 	//finger escapes after random seconds without being hit
 	setTimeout(() => {
 		obj.removeClass('up');
-	}, time * 2);
+	}, time + 1000);
 };
 
 //method for finger escaping
@@ -24,8 +24,9 @@ game.escape = obj => {
 
 //event listener for fingers on click
 $('.hole').on('click', '.finger', function() {
-	$(this).removeClass('up');
+	$(this).addClass('hit');
 	counter++;
+
 	//update counter span content
 	$('.counter').html(counter);
 	console.log('you clicked ');
@@ -40,8 +41,9 @@ game.init = setInterval(function() {
 
 	//create a for loop to iterate through the fingers being shown
 	for (let i = 0; i < numShowed; i++) {
+		//generate a random period of time for fingers to remain
+		const randomTime = Math.round(Math.random() * 500 + 1000);
 		//choose a random hole index from indexArray
-		const randomTime = Math.round(Math.random() * 500 + 800);
 		const randomIndex = Math.floor(Math.random() * indexArray.length);
 		//splice the randomIndex from indexArray, and use .eq() to select the corresponding finger image as an object
 		const $fingerObject = $(`.finger`).eq(indexArray.splice(randomIndex, 1));
