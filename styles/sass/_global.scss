@@ -1,5 +1,19 @@
+html {
+	font-size: 150%;
+}
+
 body {
-	background-color: ghostwhite;
+	//hacky way to get rid of white space underneath footer
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	background-color: $bgColor;
+	text-align: center;
+	text-transform: uppercase;
+	font-family: $tFont;
+	color: $mColor;
+	text-shadow: 1px 1px $sColor;
 }
 
 .wrapper {
@@ -7,4 +21,37 @@ body {
 	width: 90%;
 	max-width: 800px;
 	min-width: 290px;
+}
+ul {
+	list-style: none;
+	padding: 0;
+}
+
+.game {
+	margin: 0.5rem auto;
+	width: 60%;
+	display: flex;
+	justify-content: space-between;
+}
+
+h1 {
+	margin: 10px;
+}
+
+.start {
+	background: $sColor;
+	border: 3px solid $mColor;
+}
+
+.start:hover,
+.start:focus {
+	// background: $bgColor;
+	border-style: dashed;
+	font-weight: 700;
+}
+
+footer {
+	background: $mColor;
+	color: $bgColor;
+	padding: 10px;
 }

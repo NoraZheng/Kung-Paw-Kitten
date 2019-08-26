@@ -6,33 +6,22 @@ let counter = 0;
 
 // method to show finger
 game.showFinger = (obj, time) => {
-	console.log(obj);
 	obj.addClass('up');
-	console.log(`finger${obj} shows for ${time} ms`);
+
 	//finger escapes after random seconds without being hit
 	setTimeout(() => {
-		obj.removeClass('up');
-	}, time + 1000);
+		game.escape(obj);
+	}, time + 500);
 };
 
 //method for finger escaping
 game.escape = obj => {
 	obj.removeClass('up');
-	// setTimeout(game.showFinger(object), randomTime);
-	// console.log(`after ${time},finger ${obj} escaped`);
 };
 
-//event listener for fingers on click
-$('.hole').on('click', '.finger', function() {
-	$(this).addClass('hit');
-	counter++;
+game.hit = () => {};
 
-	//update counter span content
-	$('.counter').html(counter);
-	console.log('you clicked ');
-});
-
-game.init = setInterval(function() {
+game.init = function() {
 	//show a random number of fingers each time (1 - 3)
 	const numShowed = Math.ceil(Math.random() * 3);
 
@@ -41,22 +30,34 @@ game.init = setInterval(function() {
 
 	//create a for loop to iterate through the fingers being shown
 	for (let i = 0; i < numShowed; i++) {
-		//generate a random period of time for fingers to remain
+		//generate a random period of time between 1-1.5s
 		const randomTime = Math.round(Math.random() * 500 + 1000);
+
 		//choose a random hole index from indexArray
 		const randomIndex = Math.floor(Math.random() * indexArray.length);
+
 		//splice the randomIndex from indexArray, and use .eq() to select the corresponding finger image as an object
-		const $fingerObject = $(`.finger`).eq(indexArray.splice(randomIndex, 1));
-		//check if fingerObject is display:none, call showFinger()
-		if (!$fingerObject.is('.up')) {
-			game.showFinger($fingerObject, randomTime);
+		const $finger = $(`.finger`).eq(indexArray.splice(randomIndex, 1));
+
+		// if $finger is currently hidden, call showFinger()
+		if (!$finger.is('.up')) {
+			game.showFinger($finger, randomTime);
 		}
 	}
-	console.log('initiated');
-}, Math.round(Math.random() + 800));
+};
 
 $(document).ready(function() {
 	//document ready
-	console.log('doc ready');
-	game.init;
+	$('.start').on('click', function() {
+		console.log('started');
+		//run game.init around every 0.5s - 1s
+		setInterval(game.init, Math.round(Math.random() * 500) + 500);
+	});
+	//event listener for fingers on click
+	$('.hole').on('click', '.finger', function() {
+		$(this).addClass('hit');
+		counter++;
+		//update counter span content
+		$('.counter').html(counter);
+	});
 });

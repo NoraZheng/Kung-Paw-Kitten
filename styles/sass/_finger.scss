@@ -1,21 +1,27 @@
 .finger {
-	background: url('../assets/finger2.png') center no-repeat;
+	background: url('../assets/finger2Copy.png') center no-repeat;
 	background-size: contain;
 	position: absolute;
-	top: 110%;
+	top: 100%;
 	width: 100%;
 	height: 90%;
 	z-index: -5;
 	transition: all 0.2s;
+	opacity: 0;
 }
 
 .up {
-	transform: perspective(0);
-	transition: all 0.5s;
+	opacity: 100;
+	transition: all 0.3s;
 	display: block;
 	top: 0;
-	z-index: 5;
-	animation: wag 0.5s linear infinite alternate-reverse;
+	z-index: 10;
+	animation: wag 0.3s linear infinite alternate-reverse;
+}
+.hit {
+	animation: none;
+	transform: rotate(-30deg);
+	transform-origin: bottom;
 }
 
 @keyframes wag {
@@ -28,11 +34,4 @@
 		transform: rotate(-5deg);
 		transform-origin: bottom;
 	}
-}
-
-.hit {
-	animation: none;
-	transform: rotate(-30deg);
-	transform-origin: bottom;
-	transition: all 0.2s;
 }

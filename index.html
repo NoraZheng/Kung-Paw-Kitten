@@ -5,16 +5,22 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <link href="https://fonts.googleapis.com/css?family=Schoolbell&display=swap" rel="stylesheet">
    <link rel="stylesheet" href="./styles/style.css">
-   <title>Kitten whac-a-mole</title>
+   <title>PawAndOrder</title>
 </head>
 
 <body>
-   <main>
-      <div class="wrapper">
-         <h1>whac-a-mole</h1>
-         <p>Score:<span class="counter">0</span></p>
-
+   <div class="wrapper">
+      <header>
+         <h1>🐾 Paw & Order 🐾</h1>
+         <button class="start"> Start Game </button>
+         <ul class="game">
+            <li>Score: <span class="counter">0</span></li>
+            <li>Time left: <span class="timer">0</span>s</li>
+         </ul>
+      </header>
+      <main>
          <div class="gameBoard">
             <ul class="row backRow">
                <li class="hole hole0">
@@ -49,11 +55,10 @@
                   <div class="finger finger8"></div>
                </li>
             </ul>
-
          </div>
-      </div>
-   </main>
-
+      </main>
+   </div>
+   <footer> © Nora Zheng, 2019 </footer>
    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
    <script src="./script.js"></script>
 </body>

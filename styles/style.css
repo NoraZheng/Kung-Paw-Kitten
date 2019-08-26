@@ -156,8 +156,28 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   box-sizing: border-box;
 }
 
+html {
+  font-size: 150%;
+}
+
 body {
-  background-color: ghostwhite;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: #f0f0ff;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "Schoolbell", "Comic Sans MS", cursive, sans-serif;
+  color: #0a2239;
+  text-shadow: 1px 1px #85bde8;
 }
 
 .wrapper {
@@ -167,19 +187,56 @@ body {
   min-width: 290px;
 }
 
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.game {
+  margin: 0.5rem auto;
+  width: 60%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+h1 {
+  margin: 10px;
+}
+
+.start {
+  background: #85bde8;
+  border: 3px solid #0a2239;
+}
+
+.start:hover,
+.start:focus {
+  border-style: dashed;
+  font-weight: 700;
+}
+
+footer {
+  background: #0a2239;
+  color: #f0f0ff;
+  padding: 10px;
+}
+
 .gameBoard {
   border: 5px solid #0a2239;
   -webkit-transform: perspective(50px) rotateX(1deg);
           transform: perspective(50px) rotateX(1deg);
-  background-image: linear-gradient(60deg, #85bde8, #9cbcd5);
+  background-color: #85bde8;
   margin: 0 auto;
-  width: 95%;
+  width: 80%;
   max-width: 800px;
   max-height: 550px;
+  z-index: 5;
 }
 
 .row {
-  padding: 0;
   margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -187,7 +244,6 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  list-style: none;
 }
 
 .backRow {
@@ -204,67 +260,56 @@ body {
 
 .hole {
   position: relative;
-  bottom: 50px;
+  bottom: 40px;
   min-width: 80px;
-  min-height: 180px;
-  position: relative;
+  min-height: 140px;
   -webkit-box-flex: 1;
       -ms-flex: 1 1 33.33%;
           flex: 1 1 33.33%;
   overflow: hidden;
 }
 
-.hole0::after,
-.hole1::after,
-.hole2::after {
-  background-image: url("../assets/midHole.png");
-}
-
-.hole3::after,
-.hole4::after,
-.hole5::after {
-  background-image: url("../assets/midHole.png");
-}
-
-.hole6::after,
-.hole7::after,
-.hole8::after {
-  background-image: url("../assets/midHole.png");
-}
-
 .hole::after {
   display: block;
-  background-repeat: no-repeat;
-  background-position: bottom center;
+  background: url("../assets/midHole.png") bottom center no-repeat;
   background-size: contain;
   content: '';
   width: 100%;
-  height: 150px;
+  height: 200px;
   position: absolute;
-  bottom: 0px;
+  bottom: 0;
 }
 
 .finger {
-  background: url("../assets/finger2.png") center no-repeat;
+  background: url("../assets/finger2Copy.png") center no-repeat;
   background-size: contain;
   position: absolute;
-  top: 110%;
+  top: 100%;
   width: 100%;
   height: 90%;
   z-index: -5;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
+  opacity: 0;
 }
 
 .up {
-  -webkit-transform: perspective(0);
-          transform: perspective(0);
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
+  opacity: 100;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
   display: block;
   top: 0;
-  z-index: 5;
-  animation: wag 0.5s linear infinite alternate-reverse;
+  z-index: 10;
+  animation: wag 0.3s linear infinite alternate-reverse;
+}
+
+.hit {
+  -webkit-animation: none;
+          animation: none;
+  -webkit-transform: rotate(-30deg);
+          transform: rotate(-30deg);
+  -webkit-transform-origin: bottom;
+          transform-origin: bottom;
 }
 
 @-webkit-keyframes wag {
@@ -295,15 +340,4 @@ body {
     -webkit-transform-origin: bottom;
             transform-origin: bottom;
   }
-}
-
-.hit {
-  -webkit-animation: none;
-          animation: none;
-  -webkit-transform: rotate(-30deg);
-          transform: rotate(-30deg);
-  -webkit-transform-origin: bottom;
-          transform-origin: bottom;
-  -webkit-transition: all 0.2s;
-  transition: all 0.2s;
 }
