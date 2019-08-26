@@ -20,8 +20,9 @@
 }
 .hit {
 	animation: none;
-	transform: rotate(-30deg);
+	transform: rotate(-45deg);
 	transform-origin: bottom;
+	transition: all 0.5s;
 }
 
 @keyframes wag {

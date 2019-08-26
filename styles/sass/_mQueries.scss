@@ -1,0 +1,17 @@
+@media (max-width: 480px) {
+	html {
+		font-size: 125%;
+	}
+	.wrapper {
+		width: 100%;
+	}
+	.gameBoard {
+		width: 90%;
+	}
+}
+
+@media (max-width: 360px) {
+	h1 {
+		font-size: 1.6rem;
+	}
+}

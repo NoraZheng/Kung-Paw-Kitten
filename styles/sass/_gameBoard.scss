@@ -2,14 +2,15 @@
 	border: 5px solid $mColor;
 	transform: perspective(50px) rotateX(1deg);
 	background-color: $sColor;
-	margin: 0 auto;
-	width: 80%;
+	margin: 0 auto 1em;
+	width: 85%;
 	max-width: 800px;
 	max-height: 550px;
 	z-index: 5;
 }
 .row {
 	margin: 0 auto;
+	width: 100%;
 	display: flex;
 	justify-content: center;
 }

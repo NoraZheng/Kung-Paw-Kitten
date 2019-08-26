@@ -1,6 +1,7 @@
 //create game object
 const game = {};
 
+game.isRunning = false;
 //create a counter variable to track successful hit
 let counter = 0;
 
@@ -11,7 +12,7 @@ game.showFinger = (obj, time) => {
 	//finger escapes after random seconds without being hit
 	setTimeout(() => {
 		game.escape(obj);
-	}, time + 500);
+	}, time);
 };
 
 //method for finger escaping
@@ -19,7 +20,11 @@ game.escape = obj => {
 	obj.removeClass('up');
 };
 
-game.hit = () => {};
+game.hit = obj => {
+	$(obj)
+		.addClass('hit')
+		.removeClass('up');
+};
 
 game.init = function() {
 	//show a random number of fingers each time (1 - 3)
@@ -40,7 +45,8 @@ game.init = function() {
 		const $finger = $(`.finger`).eq(indexArray.splice(randomIndex, 1));
 
 		// if $finger is currently hidden, call showFinger()
-		if (!$finger.is('.up')) {
+		if (!$finger.is('.up') && game.isRunning) {
+			$finger.removeClass('hit');
 			game.showFinger($finger, randomTime);
 		}
 	}
@@ -48,14 +54,26 @@ game.init = function() {
 
 $(document).ready(function() {
 	//document ready
+
+	//event listener for button.start to start the game
 	$('.start').on('click', function() {
-		console.log('started');
-		//run game.init around every 0.5s - 1s
-		setInterval(game.init, Math.round(Math.random() * 500) + 500);
+		game.isRunning = true;
+
+		//reset score
+		counter = 0;
+		$('.counter').html(counter);
+
+		//game ends after 20 seconds
+		setTimeout(() => {
+			game.isRunning = false;
+			alert(`Time up! Your score is ${counter}!`);
+		}, 20000);
+		//run game.init around every 1s - 1.5s
+		setInterval(game.init, Math.round(Math.random() * 1000) + 500);
 	});
 	//event listener for fingers on click
-	$('.hole').on('click', '.finger', function() {
-		$(this).addClass('hit');
+	$('.hole').on('click', '.finger', function(e) {
+		game.hit(e.target);
 		counter++;
 		//update counter span content
 		$('.counter').html(counter);

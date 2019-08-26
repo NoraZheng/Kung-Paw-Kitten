@@ -229,8 +229,8 @@ footer {
   -webkit-transform: perspective(50px) rotateX(1deg);
           transform: perspective(50px) rotateX(1deg);
   background-color: #85bde8;
-  margin: 0 auto;
-  width: 80%;
+  margin: 0 auto 1em;
+  width: 85%;
   max-width: 800px;
   max-height: 550px;
   z-index: 5;
@@ -238,6 +238,7 @@ footer {
 
 .row {
   margin: 0 auto;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -306,10 +307,12 @@ footer {
 .hit {
   -webkit-animation: none;
           animation: none;
-  -webkit-transform: rotate(-30deg);
-          transform: rotate(-30deg);
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
   -webkit-transform-origin: bottom;
           transform-origin: bottom;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
 }
 
 @-webkit-keyframes wag {
@@ -339,5 +342,23 @@ footer {
             transform: rotate(-5deg);
     -webkit-transform-origin: bottom;
             transform-origin: bottom;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 125%;
+  }
+  .wrapper {
+    width: 100%;
+  }
+  .gameBoard {
+    width: 90%;
+  }
+}
+
+@media (max-width: 360px) {
+  h1 {
+    font-size: 1.6rem;
   }
 }
