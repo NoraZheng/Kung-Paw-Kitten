@@ -3,7 +3,6 @@ html {
 }
 
 body {
-	//hacky way to get rid of white space underneath footer
 	height: 100vh;
 	display: flex;
 	flex-direction: column;
@@ -12,8 +11,24 @@ body {
 	text-align: center;
 	color: $mColor;
 	font-family: $tFont;
+	overflow: hidden;
 }
 
+.paw {
+	transform: rotate(-10deg);
+	width: 180px;
+	height: 220px;
+	border-radius: 25%;
+	background: url('../assets/paw.png') no-repeat;
+	background-size: contain;
+	position: absolute;
+	z-index: 50;
+}
+
+.pawHit {
+	transition: all 0.1s;
+	transform: rotate(-30deg);
+}
 .wrapper {
 	margin: 0 auto;
 	width: 90%;
@@ -56,7 +71,7 @@ a:focus {
 }
 
 .game {
-	margin: 0.5rem auto 1rem;
+	margin: 0.5rem auto;
 	width: 60%;
 	display: flex;
 	justify-content: space-between;

@@ -1,17 +1,39 @@
-@media (max-width: 480px) {
+@media (max-width: 960px) {
+	.paw,
+	.pawHit {
+		display: none;
+	}
+}
+
+@media (max-width: 640px) {
+	h1 {
+		font-size: 1.5rem;
+	}
+	h2 {
+		font-size: 1.2rem;
+	}
+	.infoBox {
+		width: 90%;
+		top: 18vh;
+		h2,
+		p {
+			margin: 5px;
+		}
+	}
+	.game {
+		width: 85%;
+	}
+}
+
+@media (max-width: 520px) {
 	html {
 		font-size: 125%;
 	}
+
 	.wrapper {
 		width: 100%;
 	}
 	.gameBoard {
 		width: 90%;
-	}
-}
-
-@media (max-width: 360px) {
-	h1 {
-		font-size: 1.6rem;
 	}
 }

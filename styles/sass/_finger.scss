@@ -1,5 +1,5 @@
 .finger {
-	background: url('../assets/finger2Copy.png') center no-repeat;
+	background: url('../assets/finger.png') center no-repeat;
 	background-size: contain;
 	position: absolute;
 	top: 100%;
@@ -16,7 +16,7 @@
 	display: block;
 	top: 0;
 	z-index: 10;
-	animation: wag 0.3s linear infinite alternate-reverse;
+	animation: wag 0.4s linear infinite alternate-reverse;
 }
 .hit {
 	animation: none;

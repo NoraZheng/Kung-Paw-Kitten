@@ -21,7 +21,7 @@ game.escape = obj => {
 };
 
 //method to update CSS and score when a finger is hit
-game.hit = obj => {
+game.fingerHit = obj => {
 	$(obj)
 		.addClass('hit')
 		.removeClass('up');
@@ -34,18 +34,19 @@ game.hit = obj => {
 game.keyHit = key => {
 	const fingerHit = $(`.finger[data-key="${key}"]`);
 	if (fingerHit.is('.up')) {
-		game.hit(fingerHit);
+		game.fingerHit(fingerHit);
 	}
 };
 
 //event listener for fingers on click
 $('.finger').on('click', function() {
-	game.hit($(this));
+	game.fingerHit($(this));
 });
 
 //method to set a timer that updates every second
 game.timer = function() {
 	let time = 20;
+	$('.timer').html(time);
 	setInterval(function() {
 		if (time > 0) {
 			time--;
@@ -62,7 +63,30 @@ game.end = function(interval) {
 	clearInterval(interval);
 };
 
-game.init = function() {
+//make the cat paw follow cursor
+game.movePaw = function() {
+	$(document).on('mousemove', function(e) {
+		$('.paw').css({
+			left: e.pageX - 5,
+			top: e.pageY - 12
+		});
+	});
+};
+
+//update cat paw CSS when mousedown
+game.pawHit = () => {
+	$(document).mousedown(() => {
+		$('.paw').addClass('pawHit');
+		setTimeout(() => {
+			$('.paw').removeClass('pawHit');
+		}, 300);
+	});
+};
+
+//turn on event listener for keyboard access
+$(document).on('keydown', e => game.keyHit(e.originalEvent.key));
+
+game.start = function() {
 	//set the active element (tab focus) to <body> so keyboard users don't need to manually navigate to the game board
 	document.activeElement.blur();
 
@@ -90,12 +114,13 @@ game.init = function() {
 		}
 	}
 };
-
-$(document).ready(function() {
-	//document ready
-
+game.init = function() {
 	//show div.infoBox(how to play)
 	$('.infoBox').fadeIn();
+
+	//call cursor mouse events
+	game.movePaw();
+	game.pawHit();
 
 	//event listener for button.start to start the game
 	$('.start').on('click', function() {
@@ -111,9 +136,9 @@ $(document).ready(function() {
 		counter = 0;
 		$('.counter').html(counter);
 
-		//a setInterval to run game.init every random 1s-1.5s
+		//a setInterval to run game.start every random 1s-1.5s
 		const spawn = setInterval(
-			game.init,
+			game.start,
 			Math.round(Math.random() * 1000) + 500
 		);
 
@@ -123,7 +148,9 @@ $(document).ready(function() {
 			game.end(spawn);
 		}, 20000);
 	});
+};
 
-	//turn on event listener for keyboard access
-	$(document).on('keydown', e => game.keyHit(e.originalEvent.key));
+$(document).ready(function() {
+	//document ready
+	game.init();
 }); //end of document ready

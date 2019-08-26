@@ -176,6 +176,26 @@ body {
   text-align: center;
   color: #0a2239;
   font-family: "Schoolbell", "Comic Sans MS", cursive, sans-serif;
+  overflow: hidden;
+}
+
+.paw {
+  -webkit-transform: rotate(-10deg);
+          transform: rotate(-10deg);
+  width: 180px;
+  height: 220px;
+  border-radius: 25%;
+  background: url("../assets/paw.png") no-repeat;
+  background-size: contain;
+  position: absolute;
+  z-index: 50;
+}
+
+.pawHit {
+  -webkit-transition: all 0.1s;
+  transition: all 0.1s;
+  -webkit-transform: rotate(-30deg);
+          transform: rotate(-30deg);
 }
 
 .wrapper {
@@ -225,7 +245,7 @@ a:focus {
 }
 
 .game {
-  margin: 0.5rem auto 1rem;
+  margin: 0.5rem auto;
   width: 60%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -326,7 +346,7 @@ footer {
 
 .hole::after {
   display: block;
-  background: url("../assets/midHole.png") bottom center no-repeat;
+  background: url("../assets/hole.png") bottom center no-repeat;
   background-size: contain;
   content: '';
   width: 100%;
@@ -336,7 +356,7 @@ footer {
 }
 
 .finger {
-  background: url("../assets/finger2Copy.png") center no-repeat;
+  background: url("../assets/finger.png") center no-repeat;
   background-size: contain;
   position: absolute;
   top: 100%;
@@ -355,7 +375,7 @@ footer {
   display: block;
   top: 0;
   z-index: 10;
-  animation: wag 0.3s linear infinite alternate-reverse;
+  animation: wag 0.4s linear infinite alternate-reverse;
 }
 
 .hit {
@@ -399,7 +419,34 @@ footer {
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 960px) {
+  .paw,
+  .pawHit {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+  h2 {
+    font-size: 1.2rem;
+  }
+  .infoBox {
+    width: 90%;
+    top: 18vh;
+  }
+  .infoBox h2,
+  .infoBox p {
+    margin: 5px;
+  }
+  .game {
+    width: 85%;
+  }
+}
+
+@media (max-width: 520px) {
   html {
     font-size: 125%;
   }
@@ -408,11 +455,5 @@ footer {
   }
   .gameBoard {
     width: 90%;
-  }
-}
-
-@media (max-width: 360px) {
-  h1 {
-    font-size: 1.6rem;
   }
 }
