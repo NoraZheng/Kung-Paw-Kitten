@@ -1,0 +1,22 @@
+.infoBox,
+.scoreBoard {
+	display: none;
+	z-index: 20;
+	position: fixed;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	padding: 1em 2em;
+	width: 60%;
+	font-size: 90%;
+	background-color: $bgColor;
+	border: 2px solid $mColor;
+}
+.infoBox {
+	top: 20vh;
+	line-height: 1.5rem;
+}
+.scoreBoard {
+	top: 30vh;
+	text-align: center;
+}

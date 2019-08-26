@@ -13,25 +13,6 @@ body {
 	overflow: hidden;
 }
 
-p {
-	margin-bottom: 0;
-}
-
-.paw {
-	transform: rotate(-10deg);
-	width: 180px;
-	height: 220px;
-	border-radius: 25%;
-	background: url('../assets/paw.png') no-repeat;
-	background-size: contain;
-	position: absolute;
-	z-index: 50;
-}
-
-.pawHit {
-	transition: all 0.1s;
-	transform: rotate(-30deg);
-}
 .wrapper {
 	margin: 0 auto;
 	width: 90%;
@@ -48,43 +29,19 @@ h2 {
 h2 {
 	margin: 0.5em;
 }
+
 ul {
 	list-style: none;
 	padding: 0;
 }
 
+p {
+	margin-bottom: 0;
+}
+
 a:hover,
 a:focus {
 	font-style: italic;
-}
-.infoBox,
-.scoreBoard {
-	display: none;
-	z-index: 20;
-	position: fixed;
-	left: 0;
-	right: 0;
-	margin: 0 auto;
-	padding: 1em 2em;
-	width: 60%;
-	font-size: 90%;
-	background-color: $bgColor;
-	border: 2px solid $mColor;
-}
-.infoBox {
-	top: 20vh;
-	line-height: 1.5rem;
-}
-.scoreBoard {
-	top: 30vh;
-	text-align: center;
-}
-
-.game {
-	margin: 0.5rem auto;
-	width: 60%;
-	display: flex;
-	justify-content: space-between;
 }
 
 span {
@@ -95,29 +52,6 @@ h1 {
 	font-size: 2.4rem;
 	margin: 10px;
 	text-shadow: 2px 2px $sColor;
-}
-
-.start {
-	background: $sColor;
-	border: 3px solid $mColor;
-	box-shadow: 4px 4px 0 $sColor;
-	transition: all 0.1s;
-}
-
-.start:hover,
-.start:focus {
-	border-style: dashed;
-	font-weight: 700;
-}
-
-.start:active {
-	transition: all 0.1s;
-	box-shadow: none;
-	transform: translate(4px, 4px);
-}
-
-.start:disabled {
-	opacity: 0;
 }
 
 footer {

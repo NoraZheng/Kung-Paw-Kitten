@@ -1,3 +1,9 @@
+.game {
+	margin: 0.5rem auto;
+	width: 60%;
+	display: flex;
+	justify-content: space-between;
+}
 .gameBoard {
 	border: 5px solid $mColor;
 	transform: perspective(50px) rotateX(1deg);

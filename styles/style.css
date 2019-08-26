@@ -178,29 +178,6 @@ body {
   overflow: hidden;
 }
 
-p {
-  margin-bottom: 0;
-}
-
-.paw {
-  -webkit-transform: rotate(-10deg);
-          transform: rotate(-10deg);
-  width: 180px;
-  height: 220px;
-  border-radius: 25%;
-  background: url("../assets/paw.png") no-repeat;
-  background-size: contain;
-  position: absolute;
-  z-index: 50;
-}
-
-.pawHit {
-  -webkit-transition: all 0.1s;
-  transition: all 0.1s;
-  -webkit-transform: rotate(-30deg);
-          transform: rotate(-30deg);
-}
-
 .wrapper {
   margin: 0 auto;
   width: 90%;
@@ -224,9 +201,48 @@ ul {
   padding: 0;
 }
 
+p {
+  margin-bottom: 0;
+}
+
 a:hover,
 a:focus {
   font-style: italic;
+}
+
+span {
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 2.4rem;
+  margin: 10px;
+  text-shadow: 2px 2px #85bde8;
+}
+
+footer {
+  background: #0a2239;
+  color: #f0f0ff;
+  padding: 10px;
+}
+
+.paw {
+  -webkit-transform: rotate(-10deg);
+          transform: rotate(-10deg);
+  width: 180px;
+  height: 220px;
+  border-radius: 25%;
+  background: url("../assets/paw.png") no-repeat;
+  background-size: contain;
+  position: absolute;
+  z-index: 50;
+}
+
+.pawHit {
+  -webkit-transition: all 0.1s;
+  transition: all 0.1s;
+  -webkit-transform: rotate(-30deg);
+          transform: rotate(-30deg);
 }
 
 .infoBox,
@@ -263,50 +279,6 @@ a:focus {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-}
-
-span {
-  font-weight: 700;
-}
-
-h1 {
-  font-size: 2.4rem;
-  margin: 10px;
-  text-shadow: 2px 2px #85bde8;
-}
-
-.start {
-  background: #85bde8;
-  border: 3px solid #0a2239;
-  -webkit-box-shadow: 4px 4px 0 #85bde8;
-          box-shadow: 4px 4px 0 #85bde8;
-  -webkit-transition: all 0.1s;
-  transition: all 0.1s;
-}
-
-.start:hover,
-.start:focus {
-  border-style: dashed;
-  font-weight: 700;
-}
-
-.start:active {
-  -webkit-transition: all 0.1s;
-  transition: all 0.1s;
-  -webkit-box-shadow: none;
-          box-shadow: none;
-  -webkit-transform: translate(4px, 4px);
-          transform: translate(4px, 4px);
-}
-
-.start:disabled {
-  opacity: 0;
-}
-
-footer {
-  background: #0a2239;
-  color: #f0f0ff;
-  padding: 10px;
 }
 
 .gameBoard {
@@ -366,6 +338,34 @@ footer {
   bottom: 0;
 }
 
+.start {
+  background: #85bde8;
+  border: 3px solid #0a2239;
+  -webkit-box-shadow: 4px 4px 0 #85bde8;
+          box-shadow: 4px 4px 0 #85bde8;
+  -webkit-transition: all 0.1s;
+  transition: all 0.1s;
+}
+
+.start:hover,
+.start:focus {
+  border-style: dashed;
+  font-weight: 700;
+}
+
+.start:active {
+  -webkit-transition: all 0.1s;
+  transition: all 0.1s;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  -webkit-transform: translate(4px, 4px);
+          transform: translate(4px, 4px);
+}
+
+.start:disabled {
+  opacity: 0;
+}
+
 .finger {
   background: url("../assets/finger.png") center no-repeat;
   background-size: contain;
@@ -393,8 +393,8 @@ footer {
 .hit {
   -webkit-animation: none;
           animation: none;
-  -webkit-transform: rotate(-45deg);
-          transform: rotate(-45deg);
+  -webkit-transform: rotate(-30deg);
+          transform: rotate(-30deg);
   -webkit-transform-origin: bottom;
           transform-origin: bottom;
   -webkit-transition: all 0.5s;

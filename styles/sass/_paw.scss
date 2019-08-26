@@ -1,0 +1,15 @@
+.paw {
+	transform: rotate(-10deg);
+	width: 180px;
+	height: 220px;
+	border-radius: 25%;
+	background: url('../assets/paw.png') no-repeat;
+	background-size: contain;
+	position: absolute;
+	z-index: 50;
+}
+
+.pawHit {
+	transition: all 0.1s;
+	transform: rotate(-30deg);
+}
