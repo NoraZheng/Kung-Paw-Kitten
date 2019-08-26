@@ -52,7 +52,7 @@ game.end = function(interval) {
 };
 
 game.init = function() {
-	//set the active element (tab focus) to <body> so keyboard users don't need to manually navigate to the game
+	//set the active element (tab focus) to <body> so keyboard users don't need to manually navigate to the game board
 	document.activeElement.blur();
 
 	//show a random number of fingers each time (1 - 3)
@@ -83,11 +83,17 @@ game.init = function() {
 $(document).ready(function() {
 	//document ready
 
+	//show div.infoBox(how to play)
+	$('.infoBox').fadeIn();
+
 	//event listener for button.start to start the game
 	$('.start').on('click', function() {
+		$('.infoBox').fadeOut();
 		game.isRunning = true;
 
+		//disable the start button
 		$(this).prop('disabled', true);
+
 		//reset score
 		counter = 0;
 		$('.counter').html(counter);

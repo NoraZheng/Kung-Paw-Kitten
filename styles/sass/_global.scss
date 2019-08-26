@@ -10,9 +10,8 @@ body {
 	justify-content: space-between;
 	background-color: $bgColor;
 	text-align: center;
-	text-transform: uppercase;
-	font-family: $tFont;
 	color: $mColor;
+	font-family: $tFont;
 }
 
 .wrapper {
@@ -21,13 +20,36 @@ body {
 	max-width: 800px;
 	min-width: 290px;
 }
+header,
+footer,
+h2 {
+	text-transform: uppercase;
+}
 ul {
 	list-style: none;
 	padding: 0;
 }
 
+a:hover,
+a:focus {
+	font-style: italic;
+}
+.infoBox {
+	display: none;
+	z-index: 20;
+	position: fixed;
+	top: 22vh;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	width: 60%;
+	font-size: 90%;
+	background-color: $bgColor;
+	border: 2px solid $mColor;
+}
+
 .game {
-	margin: 0.5rem auto;
+	margin: 0.5rem auto 1rem;
 	width: 60%;
 	display: flex;
 	justify-content: space-between;

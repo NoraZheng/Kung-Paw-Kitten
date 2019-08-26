@@ -174,9 +174,8 @@ body {
           justify-content: space-between;
   background-color: #f0f0ff;
   text-align: center;
-  text-transform: uppercase;
-  font-family: "Schoolbell", "Comic Sans MS", cursive, sans-serif;
   color: #0a2239;
+  font-family: "Schoolbell", "Comic Sans MS", cursive, sans-serif;
 }
 
 .wrapper {
@@ -186,13 +185,38 @@ body {
   min-width: 290px;
 }
 
+header,
+footer,
+h2 {
+  text-transform: uppercase;
+}
+
 ul {
   list-style: none;
   padding: 0;
 }
 
+a:hover,
+a:focus {
+  font-style: italic;
+}
+
+.infoBox {
+  display: none;
+  z-index: 20;
+  position: fixed;
+  top: 22vh;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 60%;
+  font-size: 90%;
+  background-color: #f0f0ff;
+  border: 2px solid #0a2239;
+}
+
 .game {
-  margin: 0.5rem auto;
+  margin: 0.5rem auto 1rem;
   width: 60%;
   display: -webkit-box;
   display: -ms-flexbox;
