@@ -15,16 +15,33 @@ game.showFinger = (obj, time) => {
 	}, time);
 };
 
-//method for finger escaping
+//method to hide unhit fingers
 game.escape = obj => {
 	obj.removeClass('up');
 };
 
+//method to update CSS and score when a finger is hit
 game.hit = obj => {
 	$(obj)
 		.addClass('hit')
 		.removeClass('up');
+	counter++;
+	//update score span content
+	$('.counter').html(counter);
 };
+
+//method for keyboard accessibility
+game.keyHit = key => {
+	const fingerHit = $(`.finger[data-key="${key}"]`);
+	if (fingerHit.is('.up')) {
+		game.hit(fingerHit);
+	}
+};
+
+//event listener for fingers on click
+$('.finger').on('click', function() {
+	game.hit($(this));
+});
 
 game.init = function() {
 	//show a random number of fingers each time (1 - 3)
@@ -35,7 +52,7 @@ game.init = function() {
 
 	//create a for loop to iterate through the fingers being shown
 	for (let i = 0; i < numShowed; i++) {
-		//generate a random period of time between 1-1.5s
+		//generate a random period of time between 1s -1.5s
 		const randomTime = Math.round(Math.random() * 500 + 1000);
 
 		//choose a random hole index from indexArray
@@ -59,6 +76,7 @@ $(document).ready(function() {
 	$('.start').on('click', function() {
 		game.isRunning = true;
 
+		$(this).prop('disabled', true);
 		//reset score
 		counter = 0;
 		$('.counter').html(counter);
@@ -67,15 +85,13 @@ $(document).ready(function() {
 		setTimeout(() => {
 			game.isRunning = false;
 			alert(`Time up! Your score is ${counter}!`);
+			$('.start').prop('disabled', false);
 		}, 20000);
+
 		//run game.init around every 1s - 1.5s
 		setInterval(game.init, Math.round(Math.random() * 1000) + 500);
 	});
-	//event listener for fingers on click
-	$('.hole').on('click', '.finger', function(e) {
-		game.hit(e.target);
-		counter++;
-		//update counter span content
-		$('.counter').html(counter);
-	});
-});
+
+	//turn on event listener for keyboard access
+	$(document).on('keydown', e => game.keyHit(e.originalEvent.key));
+}); //end of document ready

@@ -177,7 +177,6 @@ body {
   text-transform: uppercase;
   font-family: "Schoolbell", "Comic Sans MS", cursive, sans-serif;
   color: #0a2239;
-  text-shadow: 1px 1px #85bde8;
 }
 
 .wrapper {
@@ -203,19 +202,41 @@ ul {
           justify-content: space-between;
 }
 
+span {
+  font-weight: 700;
+}
+
 h1 {
   margin: 10px;
+  text-shadow: 2px 2px #85bde8;
 }
 
 .start {
   background: #85bde8;
   border: 3px solid #0a2239;
+  -webkit-box-shadow: 4px 4px 0 #85bde8;
+          box-shadow: 4px 4px 0 #85bde8;
+  -webkit-transition: all 0.1s;
+  transition: all 0.1s;
 }
 
 .start:hover,
 .start:focus {
   border-style: dashed;
   font-weight: 700;
+}
+
+.start:active {
+  -webkit-transition: all 0.1s;
+  transition: all 0.1s;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  -webkit-transform: translate(4px, 4px);
+          transform: translate(4px, 4px);
+}
+
+.start:disabled {
+  opacity: 0;
 }
 
 footer {
