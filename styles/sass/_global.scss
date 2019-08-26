@@ -13,7 +13,6 @@ body {
 	text-transform: uppercase;
 	font-family: $tFont;
 	color: $mColor;
-	text-shadow: 1px 1px $sColor;
 }
 
 .wrapper {
@@ -34,20 +33,36 @@ ul {
 	justify-content: space-between;
 }
 
+span {
+	font-weight: 700;
+}
+
 h1 {
 	margin: 10px;
+	text-shadow: 2px 2px $sColor;
 }
 
 .start {
 	background: $sColor;
 	border: 3px solid $mColor;
+	box-shadow: 4px 4px 0 $sColor;
+	transition: all 0.1s;
 }
 
 .start:hover,
 .start:focus {
-	// background: $bgColor;
 	border-style: dashed;
 	font-weight: 700;
+}
+
+.start:active {
+	transition: all 0.1s;
+	box-shadow: none;
+	transform: translate(4px, 4px);
+}
+
+.start:disabled {
+	opacity: 0;
 }
 
 footer {
