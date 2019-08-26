@@ -43,7 +43,18 @@ $('.finger').on('click', function() {
 	game.hit($(this));
 });
 
+//method to end the game and clear setInterval
+game.end = function(interval) {
+	game.isRunning = false;
+	alert(`Time up! Your score is ${counter}!`);
+	$('.start').prop('disabled', false);
+	clearInterval(interval);
+};
+
 game.init = function() {
+	//set the active element (tab focus) to <body> so keyboard users don't need to manually navigate to the game
+	document.activeElement.blur();
+
 	//show a random number of fingers each time (1 - 3)
 	const numShowed = Math.ceil(Math.random() * 3);
 
@@ -81,15 +92,17 @@ $(document).ready(function() {
 		counter = 0;
 		$('.counter').html(counter);
 
-		//game ends after 20 seconds
-		setTimeout(() => {
-			game.isRunning = false;
-			alert(`Time up! Your score is ${counter}!`);
-			$('.start').prop('disabled', false);
-		}, 20000);
+		//a setInterval to run game.init every random 1s-1.5s
+		const spawn = setInterval(
+			game.init,
+			Math.round(Math.random() * 1000) + 500
+		);
 
-		//run game.init around every 1s - 1.5s
-		setInterval(game.init, Math.round(Math.random() * 1000) + 500);
+		//game ends after 20 seconds
+		setTimeout(function() {
+			//pass in the id of the setInterval to clear it
+			game.end(spawn);
+		}, 20000);
 	});
 
 	//turn on event listener for keyboard access
