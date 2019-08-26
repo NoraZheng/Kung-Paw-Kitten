@@ -251,6 +251,7 @@ a:focus {
 
 .scoreBoard {
   top: 30vh;
+  text-align: center;
 }
 
 .game {
