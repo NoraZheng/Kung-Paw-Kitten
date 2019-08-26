@@ -46,7 +46,8 @@ $('.finger').on('click', function() {
 //method to end the game and clear setInterval
 game.end = function(interval) {
 	game.isRunning = false;
-	alert(`Time up! Your score is ${counter}!`);
+	$('.finger').removeClass('up');
+	$('.scoreBoard').fadeIn();
 	$('.start').prop('disabled', false);
 	clearInterval(interval);
 };
@@ -89,6 +90,7 @@ $(document).ready(function() {
 	//event listener for button.start to start the game
 	$('.start').on('click', function() {
 		$('.infoBox').fadeOut();
+		$('.scoreBoard').fadeOut();
 		game.isRunning = true;
 
 		//disable the start button

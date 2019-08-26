@@ -34,11 +34,12 @@ a:hover,
 a:focus {
 	font-style: italic;
 }
-.infoBox {
+.infoBox,
+.scoreBoard {
 	display: none;
 	z-index: 20;
 	position: fixed;
-	top: 22vh;
+	top: 25vh;
 	left: 0;
 	right: 0;
 	margin: 0 auto;
