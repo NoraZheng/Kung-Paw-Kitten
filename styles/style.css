@@ -173,10 +173,13 @@ body {
       -ms-flex-pack: justify;
           justify-content: space-between;
   background-color: #f0f0ff;
-  text-align: center;
   color: #0a2239;
   font-family: "Schoolbell", "Comic Sans MS", cursive, sans-serif;
   overflow: hidden;
+}
+
+p {
+  margin-bottom: 0;
 }
 
 .paw {
@@ -208,7 +211,12 @@ body {
 header,
 footer,
 h2 {
+  text-align: center;
   text-transform: uppercase;
+}
+
+h2 {
+  margin: 0.5em;
 }
 
 ul {
@@ -229,7 +237,7 @@ a:focus {
   left: 0;
   right: 0;
   margin: 0 auto;
-  padding: 0.5em 1em;
+  padding: 1em 2em;
   width: 60%;
   font-size: 90%;
   background-color: #f0f0ff;
@@ -238,6 +246,7 @@ a:focus {
 
 .infoBox {
   top: 20vh;
+  line-height: 1.5rem;
 }
 
 .scoreBoard {
@@ -260,6 +269,7 @@ span {
 }
 
 h1 {
+  font-size: 2.4rem;
   margin: 10px;
   text-shadow: 2px 2px #85bde8;
 }
@@ -420,9 +430,15 @@ footer {
 }
 
 @media (max-width: 960px) {
+  h1 {
+    font-size: 2rem;
+  }
   .paw,
   .pawHit {
     display: none;
+  }
+  .infoBox {
+    padding: 0.5em 1em;
   }
 }
 

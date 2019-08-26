@@ -1,7 +1,9 @@
 //create game object
 const game = {};
 
+//set game state to be not running
 game.isRunning = false;
+
 //create a counter variable to track successful hit
 let counter = 0;
 
@@ -59,7 +61,10 @@ game.end = function(interval) {
 	game.isRunning = false;
 	$('.finger').removeClass('up');
 	$('.scoreBoard').fadeIn();
-	$('.start').prop('disabled', false);
+	$('.start')
+		.prop('disabled', false)
+		.html('play again!');
+
 	clearInterval(interval);
 };
 
