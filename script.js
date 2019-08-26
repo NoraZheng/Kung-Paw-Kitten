@@ -43,6 +43,16 @@ $('.finger').on('click', function() {
 	game.hit($(this));
 });
 
+//method to set a timer that updates every second
+game.timer = function() {
+	let time = 20;
+	setInterval(function() {
+		if (time > 0) {
+			time--;
+			$('.timer').html(time);
+		}
+	}, 1000);
+};
 //method to end the game and clear setInterval
 game.end = function(interval) {
 	game.isRunning = false;
@@ -89,6 +99,7 @@ $(document).ready(function() {
 
 	//event listener for button.start to start the game
 	$('.start').on('click', function() {
+		game.timer();
 		$('.infoBox').fadeOut();
 		$('.scoreBoard').fadeOut();
 		game.isRunning = true;
