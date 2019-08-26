@@ -1,11 +1,11 @@
 //create game object
 const game = {};
 
+//store the number of successful hit
+game.counter = 0;
+
 //set game state to be not running
 game.isRunning = false;
-
-//create a counter variable to track successful hit
-let counter = 0;
 
 // method to show finger
 game.showFinger = (obj, time) => {
@@ -24,12 +24,13 @@ game.escape = obj => {
 
 //method to update CSS and score when a finger is hit
 game.fingerHit = obj => {
+	//create a counter variable to track successful hit
 	$(obj)
 		.addClass('hit')
 		.removeClass('up');
-	counter++;
+	game.counter++;
 	//update score span content
-	$('.counter').html(counter);
+	$('.counter').html(game.counter);
 };
 
 //method for keyboard accessibility
@@ -39,11 +40,6 @@ game.keyHit = key => {
 		game.fingerHit(fingerHit);
 	}
 };
-
-//event listener for fingers on click
-$('.finger').on('click', function() {
-	game.fingerHit($(this));
-});
 
 //method to set a timer that updates every second
 game.timer = function() {
@@ -88,9 +84,7 @@ game.pawHit = () => {
 	});
 };
 
-//turn on event listener for keyboard access
-$(document).on('keydown', e => game.keyHit(e.originalEvent.key));
-
+//method to start one round of game
 game.start = function() {
 	//set the active element (tab focus) to <body> so keyboard users don't need to manually navigate to the game board
 	document.activeElement.blur();
@@ -119,6 +113,7 @@ game.start = function() {
 		}
 	}
 };
+//method to initialize the app
 game.init = function() {
 	//show div.infoBox(how to play)
 	$('.infoBox').fadeIn();
@@ -126,6 +121,14 @@ game.init = function() {
 	//call cursor mouse events
 	game.movePaw();
 	game.pawHit();
+
+	//event listener for keyboard access
+	$(document).on('keydown', e => game.keyHit(e.originalEvent.key));
+
+	//event listener for fingers on click
+	$('.finger').on('click', function() {
+		game.fingerHit($(this));
+	});
 
 	//event listener for button.start to start the game
 	$('.start').on('click', function() {
@@ -138,8 +141,8 @@ game.init = function() {
 		$(this).prop('disabled', true);
 
 		//reset score
-		counter = 0;
-		$('.counter').html(counter);
+		game.counter = 0;
+		$('.counter').html(game.counter);
 
 		//a setInterval to run game.start every random 1s-1.5s
 		const spawn = setInterval(
