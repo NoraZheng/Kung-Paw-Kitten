@@ -376,6 +376,7 @@ footer {
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
   opacity: 0;
+  text-align: center;
 }
 
 .up {
