@@ -43,7 +43,7 @@ game.keyHit = key => {
 
 //method to set a timer that updates every second
 game.timer = function() {
-	let time = 20;
+	let time = 15;
 	$('.timer').html(time);
 	setInterval(function() {
 		if (time > 0) {
@@ -154,7 +154,7 @@ game.init = function() {
 		setTimeout(function() {
 			//pass in the id of the setInterval to clear it
 			game.end(spawn);
-		}, 20000);
+		}, 15000);
 	});
 };
 
