@@ -7,7 +7,7 @@
    <meta http-equiv="X-UA-Compatible" content="ie=edge">
    <link href="https://fonts.googleapis.com/css?family=Schoolbell&display=swap" rel="stylesheet">
    <link rel="stylesheet" href="./styles/style.css">
-   <title>PawAndOrder</title>
+   <title>Kung Paw Kitten</title>
 </head>
 
 <body>
@@ -18,7 +18,6 @@
    <div class="wrapper">
       <header>
          <h1>🐾 Kung Paw Kitten 🐾</h1>
-         <button class="start"> play! </button>
          <ul class="game">
             <li>Score: <span class="counter">0</span></li>
             <li>Time left: <span class="timer">0</span> s</li>
@@ -35,50 +34,54 @@
                <br>Press the "play!" button above to start.
                <br>Enjoy!
             </p>
-            <p>(Click <a target="_blank" href="./assets/howTo.gif">here</a> to see the gif that inspired this game)</p>
+            <p class="gifLink">(Click <a target="_blank" href="./assets/howTo.gif">here</a> to see the gif that inspired
+               this game)</p>
+            <button class="start"> play! </button>
          </div>
          <div class="scoreBoard">
             <h2>Time is up!</h2>
             <p>You knocked down <span class="counter"></span> fingers!</p>
+            <button class="start"> play! </button>
          </div>
          <div class="gameBoard">
             <ul class="row backRow">
                <li class="hole hole0">
-                  <div class="finger finger0" data-key="q">Q</div>
+                  <div class="finger finger0" data-key="q"><span class="letter">Q</span></div>
                </li>
                <li class="hole hole1">
-                  <div class="finger finger1" data-key="w">W</div>
+                  <div class="finger finger1" data-key="w"><span class="letter">W</div>
                </li>
                <li class="hole hole2">
-                  <div class="finger finger2" data-key="e">E</div>
+                  <div class="finger finger2" data-key="e"><span class="letter">E</span></div>
                </li>
             </ul>
             <ul class="row midRow">
                <li class="hole hole3">
-                  <div class="finger finger3" data-key="a">A</div>
+                  <div class="finger finger3" data-key="a"><span class="letter">A</span></div>
                </li>
                <li class="hole hole4">
-                  <div class="finger finger4" data-key="s">S</div>
+                  <div class="finger finger4" data-key="s"><span class="letter">S</div>
                </li>
                <li class="hole hole5">
-                  <div class="finger finger5" data-key="d">D</div>
+                  <div class="finger finger5" data-key="d"><span class="letter">D</div>
                </li>
             </ul>
             <ul class="row frontRow">
                <li class="hole hole6">
-                  <div class="finger finger6" data-key="z">Z</div>
+                  <div class="finger finger6" data-key="z"><span class="letter">Z</div>
                </li>
                <li class="hole hole7">
-                  <div class="finger finger7" data-key="x">X</div>
+                  <div class="finger finger7" data-key="x"><span class="letter">X</div>
                </li>
                <li class="hole hole8">
-                  <div class="finger finger8" data-key="c">C</div>
+                  <div class="finger finger8" data-key="c"><span class="letter">C</div>
                </li>
             </ul>
          </div>
       </main>
    </div>
    <footer> © Nora Zheng, 2019 </footer>
+
    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
    <script src="./script.js"></script>
 </body>

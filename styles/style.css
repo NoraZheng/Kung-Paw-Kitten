@@ -248,13 +248,13 @@ footer {
 .infoBox,
 .scoreBoard {
   display: none;
-  z-index: 20;
+  z-index: 100;
   position: fixed;
   left: 0;
   right: 0;
   margin: 0 auto;
   padding: 1em 2em;
-  width: 60%;
+  width: 80%;
   font-size: 90%;
   background-color: #f0f0ff;
   border: 2px solid #0a2239;
@@ -262,7 +262,7 @@ footer {
 
 .infoBox {
   top: 20vh;
-  line-height: 1.5rem;
+  line-height: 1.3rem;
 }
 
 .scoreBoard {
@@ -345,6 +345,7 @@ footer {
           box-shadow: 4px 4px 0 #85bde8;
   -webkit-transition: all 0.1s;
   transition: all 0.1s;
+  margin: 1rem auto;
 }
 
 .start:hover,
@@ -442,6 +443,9 @@ footer {
   .infoBox {
     padding: 0.5em 1em;
   }
+  .letter {
+    display: none;
+  }
 }
 
 @media (max-width: 640px) {
@@ -453,7 +457,7 @@ footer {
   }
   .infoBox {
     width: 90%;
-    top: 18vh;
+    top: 10vh;
   }
   .infoBox h2,
   .infoBox p {
@@ -471,7 +475,22 @@ footer {
   .wrapper {
     width: 100%;
   }
+  .infoBox {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+  .optional {
+    display: none;
+  }
   .gameBoard {
     width: 90%;
+    -webkit-transform: none;
+            transform: none;
+  }
+  .hole {
+    min-height: 125px;
+  }
+  footer {
+    padding: 5px;
   }
 }

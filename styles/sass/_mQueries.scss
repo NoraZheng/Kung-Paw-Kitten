@@ -9,6 +9,9 @@
 	.infoBox {
 		padding: 0.5em 1em;
 	}
+	.letter {
+		display: none;
+	}
 }
 
 @media (max-width: 640px) {
@@ -20,7 +23,7 @@
 	}
 	.infoBox {
 		width: 90%;
-		top: 18vh;
+		top: 10vh;
 		h2,
 		p {
 			margin: 5px;
@@ -39,7 +42,21 @@
 	.wrapper {
 		width: 100%;
 	}
+	.infoBox {
+		font-size: 1rem;
+		line-height: 1.5rem;
+	}
+	.optional {
+		display: none;
+	}
 	.gameBoard {
 		width: 90%;
+		transform: none;
+	}
+	.hole {
+		min-height: 125px;
+	}
+	footer {
+		padding: 5px;
 	}
 }
