@@ -1,22 +1,27 @@
 .infoBox,
 .scoreBoard {
-	display: none;
-	z-index: 100;
-	position: fixed;
-	left: 0;
-	right: 0;
-	margin: 0 auto;
-	padding: 1em 2em;
-	width: 80%;
-	font-size: 90%;
-	background-color: $bgColor;
-	border: 2px solid $mColor;
+  display: none;
+  z-index: 100;
+  position: fixed;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  padding: 1em 2em;
+  width: 60%;
+  font-size: 80%;
+  background-color: $bgColor;
+  border: 5px solid $mColor;
+  border-radius: 50px;
+  p {
+    font-family: $mFont;
+  }
 }
 .infoBox {
-	top: 20vh;
-	line-height: 1.3rem;
+  top: 20vh;
+  line-height: 1.3rem;
+  text-align: center;
 }
 .scoreBoard {
-	top: 30vh;
-	text-align: center;
+  top: 30vh;
+  text-align: center;
 }

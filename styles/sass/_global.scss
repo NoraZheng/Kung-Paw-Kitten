@@ -1,61 +1,61 @@
 html {
-	font-size: 150%;
+  font-size: 150%;
 }
 
 body {
-	height: 100vh;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	background-color: $bgColor;
-	color: $mColor;
-	font-family: $tFont;
-	overflow: hidden;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: $bgColor;
+  color: $mColor;
+  font-family: $tFont;
+  overflow: hidden;
 }
 
 .wrapper {
-	margin: 0 auto;
-	width: 90%;
-	max-width: 800px;
-	min-width: 290px;
+  margin: 0 auto;
+  width: 90%;
+  max-width: 800px;
+  min-width: 290px;
 }
 header,
 footer,
 h2 {
-	text-align: center;
-	text-transform: uppercase;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 h2 {
-	margin: 0.5em;
+  margin: 0.5em;
 }
 
 ul {
-	list-style: none;
-	padding: 0;
+  list-style: none;
+  padding: 0;
 }
 
 p {
-	margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 a:hover,
 a:focus {
-	font-style: italic;
+  font-style: italic;
 }
 
 span {
-	font-weight: 700;
+  font-weight: 700;
 }
 
 h1 {
-	font-size: 2.4rem;
-	margin: 10px;
-	text-shadow: 2px 2px $sColor;
+  font-size: 2.4rem;
+  margin: 10px;
+  text-shadow: 2px 2px $sColor;
 }
 
 footer {
-	background: $mColor;
-	color: $bgColor;
-	padding: 10px;
+  background: $mColor;
+  color: $bgColor;
+  padding: 10px;
 }

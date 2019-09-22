@@ -174,7 +174,7 @@ body {
           justify-content: space-between;
   background-color: #f0f0ff;
   color: #0a2239;
-  font-family: "Schoolbell", "Comic Sans MS", cursive, sans-serif;
+  font-family: "Schoolbell", cursive, sans-serif;
   overflow: hidden;
 }
 
@@ -254,15 +254,22 @@ footer {
   right: 0;
   margin: 0 auto;
   padding: 1em 2em;
-  width: 80%;
-  font-size: 90%;
+  width: 60%;
+  font-size: 80%;
   background-color: #f0f0ff;
-  border: 2px solid #0a2239;
+  border: 5px solid #0a2239;
+  border-radius: 50px;
+}
+
+.infoBox p,
+.scoreBoard p {
+  font-family: "Comfortaa", cursive;
 }
 
 .infoBox {
   top: 20vh;
   line-height: 1.3rem;
+  text-align: center;
 }
 
 .scoreBoard {
@@ -291,6 +298,7 @@ footer {
   max-width: 800px;
   max-height: 550px;
   z-index: 5;
+  border-radius: 25%;
 }
 
 .row {
