@@ -1,10 +1,13 @@
-@media (max-width: 960px) {
-	h1 {
-		font-size: 2rem;
-	}
+@media (max-width: 1024px) {
 	.paw,
 	.pawHit {
 		display: none;
+	}
+}
+
+@media (max-width: 960px) {
+	h1 {
+		font-size: 2rem;
 	}
 	.infoBox {
 		padding: 0.5em 1em;
